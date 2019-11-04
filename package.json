@@ -1,0 +1,21 @@
+{
+  "name": "emsi-skills-api",
+  "version": "0.0.0",
+  "description": "Unofficial package for the Emsi Skills Classification API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Bill Broughton <bill@billbroughton.me>",
+  "license": "MIT",
+  "devDependencies": {
+    "dotenv": "^8.2.0",
+    "eslint": "^6.6.0",
+    "eslint-config-prettier": "^6.5.0",
+    "eslint-plugin-prettier": "^3.1.1",
+    "prettier": "^1.18.2"
+  },
+  "dependencies": {
+    "request": "^2.88.0"
+  }
+}
