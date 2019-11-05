@@ -1,0 +1,3 @@
+before(() => {
+  require("dotenv").config();
+});
