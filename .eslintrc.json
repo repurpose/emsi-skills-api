@@ -10,5 +10,11 @@
   "env": {
       "node": true,
       "es6": true
+  },
+  "globals": {
+    "before": false,
+    "describe": false,
+    "it": false,
+    "expect": false
   }
 }
