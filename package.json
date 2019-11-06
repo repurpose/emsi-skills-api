@@ -1,6 +1,6 @@
 {
   "name": "emsi-skills-api",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Unofficial package for the Emsi Skills Classification API",
   "keywords": ["emsi", "skills", "classification", "api"],
   "homepage": "https://github.com/repurpose/emsi-skills-api#readme",

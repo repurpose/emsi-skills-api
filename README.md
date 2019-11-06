@@ -74,7 +74,7 @@ SkillsAPI.docs.getChangelog(); // Markdown-formatted text
  * Versions
  */
 
-SkillsAPI.versions.getVersions(); // [String]
+SkillsAPI.versions.listVersions(); // [String]
 
 /*
  * Skills
