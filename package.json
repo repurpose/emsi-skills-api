@@ -20,7 +20,7 @@
   "main": "index.js",
   "scripts": {
     "lint": "eslint .",
-    "test": "mocha",
+    "test": "mocha --file ./test/global/setup.js ./test/**/*.spec.js",
     "coverage": "nyc npm run test",
     "format": "prettier --write 'lib/**/*.js'"
   },
@@ -29,14 +29,14 @@
   "devDependencies": {
     "chai": "^4.2.0",
     "dotenv": "^8.2.0",
-    "eslint": "^6.6.0",
-    "eslint-config-prettier": "^6.6.0",
-    "eslint-plugin-prettier": "^3.1.1",
-    "mocha": "^6.2.2",
-    "nyc": "^14.1.1",
-    "prettier": "^1.19.1"
+    "eslint": "^7.3.1",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "mocha": "^8.0.1",
+    "nyc": "^15.1.0",
+    "prettier": "^2.0.5"
   },
   "dependencies": {
-    "request": "^2.88.0"
+    "request": "^2.88.2"
   }
 }

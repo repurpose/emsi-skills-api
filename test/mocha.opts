@@ -1,2 +1,0 @@
---require chai/register-expect
---file ./test/global/setup.js
