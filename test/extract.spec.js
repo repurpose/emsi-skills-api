@@ -21,7 +21,7 @@ describe("extract", function () {
   // TODO: Diagnose failing test
   it("parses document text with source data", function (done) {
     api.extract
-      .extractFromDocumentWithSource()
+      .extractFromDocumentWithSource(sampleText)
       .then((docs) => {
         expect(docs).to.be.ok;
         expect(docs.trace).to.be.ok;

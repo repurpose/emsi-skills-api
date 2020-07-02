@@ -1,4 +1,5 @@
 # Emsi Skills Classification API
+
 > The unofficial Node.js package for the Emsi Skills Classification API
 
 This package covers all available endpoints for the Emsi Skills Classification API. Official API docs are available [here](https://api.emsidata.com/apis/skills-classification)
@@ -9,7 +10,7 @@ This package covers all available endpoints for the Emsi Skills Classification A
 npm install --save emsi-skills-api
 ```
 
-or 
+or
 
 ```shell
 yarn add emsi-skills-api
@@ -35,16 +36,12 @@ This package requires two environment variables to be set: `EMSI_CLIENT_ID` and 
 
 Get all skills:
 
-
 ```javascript
 const SkillsAPI = require("emsi-skills-api");
 
-SkillsAPI
-  .skills
-  .listAllSkills()
-  .then((skills) => {
-      console.log(skills);
-  });
+SkillsAPI.skills.listAllSkills().then((skills) => {
+  console.log(skills);
+});
 ```
 
 ## API

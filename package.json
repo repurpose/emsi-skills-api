@@ -20,7 +20,7 @@
   "main": "index.js",
   "scripts": {
     "lint": "eslint .",
-    "test": "mocha",
+    "test": "mocha --file ./test/global/setup.js ./test/**/*.spec.js",
     "coverage": "nyc npm run test",
     "format": "prettier --write 'lib/**/*.js'"
   },
