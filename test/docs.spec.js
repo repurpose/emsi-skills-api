@@ -1,27 +1,27 @@
 const api = require("../index");
 
-describe("docs", function() {
-  it("fetches the docs", function(done) {
+describe("docs", function () {
+  it("fetches the docs", function (done) {
     api.docs
       .getDocs()
-      .then(docs => {
+      .then((docs) => {
         expect(docs).to.be.ok;
         return done();
       })
-      .catch(error => {
+      .catch((error) => {
         expect(error).to.not.be.ok;
         return done();
       });
   });
 
-  it("fetches the changelog", function(done) {
+  it("fetches the changelog", function (done) {
     api.docs
       .getChangelog()
-      .then(docs => {
+      .then((docs) => {
         expect(docs).to.be.ok;
         return done();
       })
-      .catch(error => {
+      .catch((error) => {
         expect(error).to.not.be.ok;
         return done();
       });
