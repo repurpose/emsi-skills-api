@@ -52,4 +52,17 @@ describe("skills", function () {
         return done();
       });
   });
+
+  it("fetches related skills", function (done) {
+    api.skills
+      .relatedSkills(["KS1200364C9C1LK3V5Q1"])
+      .then(response => {
+        expect(response).to.be.ok;
+        return done();
+      })
+      .catch((error) => {
+        expect(error).to.not.be.ok;
+        return done();
+      });
+  });
 });
