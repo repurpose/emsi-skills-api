@@ -1,6 +1,6 @@
 {
   "name": "emsi-skills-api",
-  "version": "0.1.3",
+  "version": "1.0.0",
   "description": "Unofficial package for the Emsi Skills Classification API",
   "keywords": [
     "emsi",
