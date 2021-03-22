@@ -58,49 +58,35 @@ const SkillsAPI = require("emsi-skills-api");
 SkillsAPI.status.getStatus(); // Boolean
 
 /*
- * Docs
- */
-
-// Get docs
-SkillsAPI.docs.getDocs(); // Markdown-formatted text
-
-// Get changelog
-SkillsAPI.docs.getChangelog(); // Markdown-formatted text
-
-/*
- * Versions
- */
-
-SkillsAPI.versions.listVersions(); // [String]
-
-/*
  * Skills
  */
 
 // List all skills
-SkillsAPI.skills.listAllSkills(version?); // [{ type, id, name }]
+SkillsAPI.skills.listAllSkills({ version? }); // [{ type, id, name, infoUrl }]
 
 // Search for skills
-SkillsAPI.skills.searchSkills(term, version?); // [{ type, id, name }]
+SkillsAPI.skills.searchSkills({ term, version? }); // [{ type, id, name, infoUrl }]
 
 // Get skills by type
-SkillsAPI.skills.skillsByType(typeId, version?); // [{ type, id, name }]
+SkillsAPI.skills.skillsByType({ typeIds, version? }); // [{ type, id, name, infoUrl }]
 
 // Get a skill by ID
-SkillsAPI.skills.skillById(skillId, version?); // { type, id, name }
-
-/*
- * Skill Types
- */
-
-SkillsAPI.skillTypes.listSkillTypes(version?); // [{ description, id, name }]
+SkillsAPI.skills.skillById({ skillId, version? }); // { type, id, name, infoUrl }
 
 /*
  * Extract
  */
 
 // Extract skills from document
-SkillsAPI.extract.extractFromDocument(documentText, version?); // { "skills": [{ type, id, name }] }
+SkillsAPI.extract.extractFromDocument(documentText, version?);
+// {
+//   data: [
+//     {
+//       confidence: 1,
+//       skill: { id, infoUrl, name, tags, type }
+//     }
+//   ]
+// }
 
 // Extract skills with source
 SkillsAPI.extract.extractFromDocumentWithSource(documentText, version?); // { "trace": [Object] }
