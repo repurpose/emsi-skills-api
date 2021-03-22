@@ -58,6 +58,18 @@ const SkillsAPI = require("emsi-skills-api");
 SkillsAPI.status.getStatus(); // Boolean
 
 /*
+ * Meta
+ */
+
+SkillsAPI.meta.getMeta(); // { attribution, latestVersion }
+
+/*
+ * Versions
+ */
+
+SkillsAPI.versions.getVersions(); // [string]
+
+/*
  * Skills
  */
 
@@ -74,11 +86,18 @@ SkillsAPI.skills.skillsByType({ typeIds, version? }); // [{ type, id, name, info
 SkillsAPI.skills.skillById({ skillId, version? }); // { type, id, name, infoUrl }
 
 /*
+ * Related
+ */
+
+// List related skills
+SkillsAPI.related.getRelated({ ids, version? }); // [{ type, id, name, infoUrl }]
+
+/*
  * Extract
  */
 
 // Extract skills from document
-SkillsAPI.extract.extractFromDocument(documentText, version?);
+SkillsAPI.extract.extractFromDocument({ documentText, version? });
 // {
 //   data: [
 //     {
@@ -89,7 +108,7 @@ SkillsAPI.extract.extractFromDocument(documentText, version?);
 // }
 
 // Extract skills with source
-SkillsAPI.extract.extractFromDocumentWithSource(documentText, version?); // { "trace": [Object] }
+SkillsAPI.extract.extractFromDocumentWithSource({ documentText, version? }); // { data: { skills: [], trace: [] } }
 ```
 
 ## Contributing

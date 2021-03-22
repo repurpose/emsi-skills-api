@@ -6,7 +6,9 @@ const sampleText =
 
 describe("extract", function () {
   it("parses document text", async function () {
-    const docs = await api.extract.extractFromDocument(sampleText);
+    const docs = await api.extract.extractFromDocument({
+      documentText: sampleText,
+    });
     expect(docs.data).to.be.an("array");
     expect(docs.data[0].confidence).to.be.a("number");
     expect(docs.data[0].skill).to.have.all.keys(
@@ -20,7 +22,9 @@ describe("extract", function () {
 
   // TODO: Diagnose failing test
   it("parses document text with source data", async function () {
-    const docs = await api.extract.extractFromDocumentWithSource(sampleText);
+    const docs = await api.extract.extractFromDocumentWithSource({
+      documentText: sampleText,
+    });
     expect(docs.data.skills).to.be.an("array");
     expect(docs.data.trace).to.be.an("array");
   });
