@@ -58,52 +58,57 @@ const SkillsAPI = require("emsi-skills-api");
 SkillsAPI.status.getStatus(); // Boolean
 
 /*
- * Docs
+ * Meta
  */
 
-// Get docs
-SkillsAPI.docs.getDocs(); // Markdown-formatted text
-
-// Get changelog
-SkillsAPI.docs.getChangelog(); // Markdown-formatted text
+SkillsAPI.meta.getMeta(); // { attribution, latestVersion }
 
 /*
  * Versions
  */
 
-SkillsAPI.versions.listVersions(); // [String]
+SkillsAPI.versions.getVersions(); // [string]
 
 /*
  * Skills
  */
 
 // List all skills
-SkillsAPI.skills.listAllSkills(version?); // [{ type, id, name }]
+SkillsAPI.skills.listAllSkills({ version? }); // [{ type, id, name, infoUrl }]
 
 // Search for skills
-SkillsAPI.skills.searchSkills(term, version?); // [{ type, id, name }]
+SkillsAPI.skills.searchSkills({ term, version? }); // [{ type, id, name, infoUrl }]
 
 // Get skills by type
-SkillsAPI.skills.skillsByType(typeId, version?); // [{ type, id, name }]
+SkillsAPI.skills.skillsByType({ typeIds, version? }); // [{ type, id, name, infoUrl }]
 
 // Get a skill by ID
-SkillsAPI.skills.skillById(skillId, version?); // { type, id, name }
+SkillsAPI.skills.skillById({ skillId, version? }); // { type, id, name, infoUrl }
 
 /*
- * Skill Types
+ * Related
  */
 
-SkillsAPI.skillTypes.listSkillTypes(version?); // [{ description, id, name }]
+// List related skills
+SkillsAPI.related.getRelated({ ids, version? }); // [{ type, id, name, infoUrl }]
 
 /*
  * Extract
  */
 
 // Extract skills from document
-SkillsAPI.extract.extractFromDocument(documentText, version?); // { "skills": [{ type, id, name }] }
+SkillsAPI.extract.extractFromDocument({ documentText, version? });
+// {
+//   data: [
+//     {
+//       confidence: 1,
+//       skill: { id, infoUrl, name, tags, type }
+//     }
+//   ]
+// }
 
 // Extract skills with source
-SkillsAPI.extract.extractFromDocumentWithSource(documentText, version?); // { "trace": [Object] }
+SkillsAPI.extract.extractFromDocumentWithSource({ documentText, version? }); // { data: { skills: [], trace: [] } }
 ```
 
 ## Contributing
